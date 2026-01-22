@@ -18,7 +18,7 @@ class LoginScreen:
         self.email_field = ft.TextField(
             label="Email",
             hint_text="nutricionista@ejemplo.com",
-            prefix_icon=ft.icons.MAIL,
+            prefix_icon=ft.icons.EMAIL,
             keyboard_type=ft.KeyboardType.EMAIL,
             autofocus=True,
         )

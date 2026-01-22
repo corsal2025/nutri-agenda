@@ -25,7 +25,7 @@ class RegisterScreen:
         self.email_field = ft.TextField(
             label="Email",
             hint_text="usuario@ejemplo.com",
-            prefix_icon=ft.icons.MAIL,
+            prefix_icon=ft.icons.EMAIL,
             keyboard_type=ft.KeyboardType.EMAIL,
         )
         
