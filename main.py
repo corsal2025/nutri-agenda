@@ -118,7 +118,7 @@ if __name__ == "__main__":
             view=ft.AppView.WEB_BROWSER,
             port=port,
             host="0.0.0.0",
-            web_renderer="html"  # Force HTML renderer for better compatibility
+            # web_renderer="html"  # Removed: HTML renderer not supported in newer Flet versions
         )
     except Exception as e:
         logger.error(f"Error starting app: {e}")
