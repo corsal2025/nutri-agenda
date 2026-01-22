@@ -117,7 +117,8 @@ if __name__ == "__main__":
             target=main,
             view=ft.AppView.WEB_BROWSER,
             port=port,
-            host="0.0.0.0"
+            host="0.0.0.0",
+            web_renderer=ft.WebRenderer.HTML  # Force HTML renderer for better compatibility
         )
     except Exception as e:
         logger.error(f"Error starting app: {e}")
