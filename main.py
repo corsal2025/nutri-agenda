@@ -104,15 +104,21 @@ def main(page: ft.Page):
 if __name__ == "__main__":
     import os
     
-    # Obtener puerto del entorno (Cloud Run usa PORT)
-    # Por defecto usa 8551 para desarrollo local
-    port = int(os.environ.get("PORT", 8551))
+    # Configurar logging
+    import logging
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger("flet")
     
-    # Configuración para Cloud Run
-    # Cloud Run requiere que la app escuche en 0.0.0.0
-    ft.app(
-        target=main,
-        view=ft.AppView.WEB_BROWSER,
-        port=port,
-        host="0.0.0.0"  # Necesario para Cloud Run
-    )
+    port = int(os.environ.get("PORT", 8551))
+    logger.info(f"Starting Flet app on port {port}")
+    
+    try:
+        ft.app(
+            target=main,
+            view=ft.AppView.WEB_BROWSER,
+            port=port,
+            host="0.0.0.0"
+        )
+    except Exception as e:
+        logger.error(f"Error starting app: {e}")
+
