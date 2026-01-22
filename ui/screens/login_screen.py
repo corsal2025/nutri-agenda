@@ -44,7 +44,7 @@ class LoginScreen:
             on_click=self.handle_login,
             style=ft.ButtonStyle(
                 bgcolor=AppColors.PRIMARY,
-                color=ft.colors.WHITE,
+                color="white",
             ),
             width=300,
             height=50,

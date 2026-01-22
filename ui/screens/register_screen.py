@@ -67,7 +67,7 @@ class RegisterScreen:
             on_click=self.handle_register,
             style=ft.ButtonStyle(
                 bgcolor=AppColors.PRIMARY,
-                color=ft.colors.WHITE,
+                color="white",
             ),
             width=300,
             height=50,
