@@ -55,7 +55,7 @@ class ClientDashboard:
                                 expand=True,
                             ),
                             ft.IconButton(
-                                icon=ft.icons.LOGOUT,
+                                icon="logout",
                                 tooltip="Cerrar sesión",
                                 on_click=lambda _: self.on_logout(),
                             ),
@@ -92,13 +92,13 @@ class ClientDashboard:
                     controls=[
                         ft.ElevatedButton(
                             "Agendar Cita",
-                            icon=ft.icons.EVENT_NOTE,
+                            icon="event_note",
                             on_click=lambda _: self.show_message("Funcionalidad: Agendar Cita"),
                             style=ft.ButtonStyle(bgcolor=AppColors.PRIMARY),
                         ),
                         ft.ElevatedButton(
                             "Ver Progreso",
-                            icon=ft.icons.TRENDING_UP,
+                            icon="trending_up",
                             on_click=lambda _: self.show_message("Funcionalidad: Ver Progreso"),
                             style=ft.ButtonStyle(bgcolor=AppColors.ACCENT),
                         ),
@@ -116,7 +116,7 @@ class ClientDashboard:
             return ft.Card(
                 content=ft.Container(
                     content=ft.ListTile(
-                        leading=ft.Icon(ft.icons.EVENT, color=AppColors.PRIMARY),
+                        leading=ft.Icon("event", color=AppColors.PRIMARY),
                         title=ft.Text(f"Cita programada"),
                         subtitle=ft.Text(
                             f"{apt_date.strftime('%d/%m/%Y %H:%M')}\n"
@@ -130,7 +130,7 @@ class ClientDashboard:
             return ft.Card(
                 content=ft.Container(
                     content=ft.ListTile(
-                        leading=ft.Icon(ft.icons.INFO, color=AppColors.TEXT_SECONDARY),
+                        leading=ft.Icon("info", color=AppColors.TEXT_SECONDARY),
                         title=ft.Text("No tienes citas programadas"),
                         subtitle=ft.Text("Agenda una cita con tu nutricionista"),
                     ),
@@ -150,7 +150,7 @@ class ClientDashboard:
                     content=ft.Column(
                         controls=[
                             ft.ListTile(
-                                leading=ft.Icon(ft.icons.SCALE, color=AppColors.SECONDARY),
+                                leading=ft.Icon("scale", color=AppColors.SECONDARY),
                                 title=ft.Text(f"Peso: {weight} kg"),
                                 subtitle=ft.Text(
                                     f"IMC: {bmi}\n"
@@ -166,7 +166,7 @@ class ClientDashboard:
             return ft.Card(
                 content=ft.Container(
                     content=ft.ListTile(
-                        leading=ft.Icon(ft.icons.INFO, color=AppColors.TEXT_SECONDARY),
+                        leading=ft.Icon("info", color=AppColors.TEXT_SECONDARY),
                         title=ft.Text("No hay mediciones registradas"),
                         subtitle=ft.Text("Tu nutricionista registrará tus mediciones"),
                     ),

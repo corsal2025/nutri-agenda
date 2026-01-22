@@ -18,28 +18,28 @@ class RegisterScreen:
         self.name_field = ft.TextField(
             label="Nombre completo",
             hint_text="Juan Pérez",
-            prefix_icon=ft.icons.PERSON_OUTLINE,
+            prefix_icon="person_outline",
             autofocus=True,
         )
         
         self.email_field = ft.TextField(
             label="Email",
             hint_text="usuario@ejemplo.com",
-            prefix_icon=ft.icons.EMAIL,
+            prefix_icon="email",
             keyboard_type=ft.KeyboardType.EMAIL,
         )
         
         self.phone_field = ft.TextField(
             label="Teléfono",
             hint_text="+54 9 11 1234-5678",
-            prefix_icon=ft.icons.PHONE,
+            prefix_icon="phone",
             keyboard_type=ft.KeyboardType.PHONE,
         )
         
         self.password_field = ft.TextField(
             label="Contraseña",
             hint_text="Mínimo 6 caracteres",
-            prefix_icon=ft.icons.LOCK_OUTLINE,
+            prefix_icon="lock_outline",
             password=True,
             can_reveal_password=True,
         )
@@ -63,7 +63,7 @@ class RegisterScreen:
         
         self.register_button = ft.ElevatedButton(
             "Registrarse",
-            icon=ft.icons.PERSON_ADD,
+            icon="person_add",
             on_click=self.handle_register,
             style=ft.ButtonStyle(
                 bgcolor=AppColors.PRIMARY,
@@ -92,7 +92,7 @@ class RegisterScreen:
                     # Logo/Title
                     ft.Container(
                         content=ft.Icon(
-                            ft.icons.LOCAL_DINING,
+                            "local_dining",
                             size=60,
                             color=AppColors.PRIMARY
                         ),

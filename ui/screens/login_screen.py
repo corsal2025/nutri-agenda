@@ -18,7 +18,7 @@ class LoginScreen:
         self.email_field = ft.TextField(
             label="Email",
             hint_text="nutricionista@ejemplo.com",
-            prefix_icon=ft.icons.EMAIL,
+            prefix_icon="email",
             keyboard_type=ft.KeyboardType.EMAIL,
             autofocus=True,
         )
@@ -26,7 +26,7 @@ class LoginScreen:
         self.password_field = ft.TextField(
             label="Contraseña",
             hint_text="Ingrese su contraseña",
-            prefix_icon=ft.icons.LOCK_OUTLINE,
+            prefix_icon="lock_outline",
             password=True,
             can_reveal_password=True,
         )
@@ -40,7 +40,7 @@ class LoginScreen:
         
         self.login_button = ft.ElevatedButton(
             "Iniciar Sesión",
-            icon=ft.icons.LOGIN,
+            icon="login",
             on_click=self.handle_login,
             style=ft.ButtonStyle(
                 bgcolor=AppColors.PRIMARY,
@@ -69,7 +69,7 @@ class LoginScreen:
                     # Logo/Title
                     ft.Container(
                         content=ft.Icon(
-                            ft.icons.LOCAL_DINING,
+                            "local_dining",
                             size=80,
                             color=AppColors.PRIMARY
                         ),

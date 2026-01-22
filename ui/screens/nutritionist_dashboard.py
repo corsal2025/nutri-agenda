@@ -56,7 +56,7 @@ class NutritionistDashboard:
                                 expand=True,
                             ),
                             ft.IconButton(
-                                icon=ft.icons.LOGOUT,
+                                icon="logout",
                                 tooltip="Cerrar sesión",
                                 on_click=lambda _: self.on_logout(),
                             ),
@@ -75,19 +75,19 @@ class NutritionistDashboard:
                         self.create_stat_card(
                             "Total Clientes",
                             str(self.total_clients),
-                            ft.icons.PEOPLE,
+                            "people",
                             AppColors.PRIMARY
                         ),
                         self.create_stat_card(
                             "Citas Hoy",
                             str(self.appointments_today),
-                            ft.icons.TODAY,
+                            "today",
                             AppColors.SECONDARY
                         ),
                         self.create_stat_card(
                             "Próximas Citas",
                             str(self.upcoming_appointments),
-                            ft.icons.EVENT,
+                            "event",
                             AppColors.ACCENT
                         ),
                     ],
@@ -104,19 +104,19 @@ class NutritionistDashboard:
                     controls=[
                         ft.ElevatedButton(
                             "Agregar Cliente",
-                            icon=ft.icons.PERSON_ADD,
+                            icon="person_add",
                             on_click=lambda _: self.show_message("Funcionalidad: Agregar Cliente"),
                             style=ft.ButtonStyle(bgcolor=AppColors.PRIMARY),
                         ),
                         ft.ElevatedButton(
                             "Nueva Cita",
-                            icon=ft.icons.EVENT_NOTE,
+                            icon="event_note",
                             on_click=lambda _: self.show_message("Funcionalidad: Nueva Cita"),
                             style=ft.ButtonStyle(bgcolor=AppColors.SECONDARY),
                         ),
                         ft.ElevatedButton(
                             "Ver Clientes",
-                            icon=ft.icons.LIST,
+                            icon="list",
                             on_click=lambda _: self.show_message("Funcionalidad: Ver Clientes"),
                             style=ft.ButtonStyle(bgcolor=AppColors.ACCENT),
                         ),
@@ -135,7 +135,7 @@ class NutritionistDashboard:
                         content=ft.Column(
                             controls=[
                                 ft.ListTile(
-                                    leading=ft.Icon(ft.icons.INFO, color=AppColors.INFO),
+                                    leading=ft.Icon("info", color=AppColors.INFO),
                                     title=ft.Text("Bienvenido a NutriAgenda"),
                                     subtitle=ft.Text("Sistema de gestión nutricional completo"),
                                 ),
