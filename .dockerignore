@@ -1,0 +1,41 @@
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Flet
+build/
+*.flet.build/
+
+# Firebase
+firebase-admin-key.json
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Documentation (no subir a Cloud Run)
+README.md
+QUICKSTART.md
+GITHUB_SETUP.md
+CLOUD_RUN_DEPLOYMENT.md
