@@ -1,5 +1,4 @@
-flet>=0.80.3
-flet-web>=0.80.3
+flet==0.21.2
 firebase-admin>=6.5.0
 
 python-dateutil>=2.9.0
