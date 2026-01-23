@@ -69,17 +69,17 @@ class AppShadows:
     """Shadow presets"""
     sm = ft.BoxShadow(
         blur_radius=2,
-        color=ft.colors.with_opacity(0.05, "#000000"),
+        color="#0D000000",  # 0.05 opacity black
         offset=ft.Offset(0, 1),
     )
     md = ft.BoxShadow(
         blur_radius=4,
-        color=ft.colors.with_opacity(0.1, "#000000"),
+        color="#1A000000",  # 0.1 opacity black
         offset=ft.Offset(0, 2),
     )
     lg = ft.BoxShadow(
         blur_radius=10,
-        color=ft.colors.with_opacity(0.1, "#000000"),
+        color="#1A000000",  # 0.1 opacity black
         offset=ft.Offset(0, 4),
     )
 
@@ -93,8 +93,7 @@ class AppTheme:
         return ft.Theme(
             color_scheme_seed=AppColors.PRIMARY,
             use_material3=True,
-            visual_density=ft.VisualDensity.COMFORTABLE,
-            font_family="Roboto",  # Default system font usually, explicit helps
+            font_family="Roboto",
         )
     
     @staticmethod
