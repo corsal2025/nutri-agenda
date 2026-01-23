@@ -1,42 +1,48 @@
 """
 Theme and Color Configuration
+Premium Design System
 """
 import flet as ft
 
 
 class AppColors:
-    """Application color palette"""
-    # Primary colors
-    PRIMARY = "#4CAF50"  # Green
-    PRIMARY_DARK = "#388E3C"
-    PRIMARY_LIGHT = "#C8E6C9"
+    """Premium Application Color Palette"""
+    # Brand Identity (Nature & Professionalism)
+    PRIMARY = "#10B981"      # Emerald 500 - Fresh, health-oriented
+    PRIMARY_DARK = "#059669" # Emerald 600
+    PRIMARY_LIGHT = "#D1FAE5" # Emerald 100
     
-    # Secondary colors
-    SECONDARY = "#FF9800"  # Orange
-    SECONDARY_DARK = "#F57C00"
-    SECONDARY_LIGHT = "#FFE0B2"
+    # Secondary Identity (Energy & Warmth)
+    SECONDARY = "#F59E0B"    # Amber 500
+    SECONDARY_DARK = "#D97706"
+    SECONDARY_LIGHT = "#FEF3C7"
     
-    # Accent
-    ACCENT = "#2196F3"  # Blue
+    # Accent (Trust & Clarity)
+    ACCENT = "#0EA5E9"       # Sky 500
     
-    # Status colors
-    SUCCESS = "#4CAF50"
-    WARNING = "#FFC107"
-    ERROR = "#F44336"
-    INFO = "#2196F3"
+    # Functional Colors
+    SUCCESS = "#10B981"      # Same as Primary
+    WARNING = "#F59E0B"
+    ERROR = "#EF4444"        # Red 500
+    INFO = "#3B82F6"         # Blue 500
     
-    # Status specific
-    SCHEDULED = "#2196F3"
-    COMPLETED = "#4CAF50"
-    CANCELLED = "#F44336"
-    PENDING = "#FFC107"
+    # Neutral Scale (Modern Grayscale)
+    BACKGROUND = "#F8FAFC"   # Slate 50
+    SURFACE = "#FFFFFF"      # White
+    SURFACE_VARIANT = "#F1F5F9" # Slate 100
     
-    # Neutral colors
-    BACKGROUND = "#F5F5F5"
-    SURFACE = "#FFFFFF"
-    TEXT_PRIMARY = "#212121"
-    TEXT_SECONDARY = "#757575"
-    DIVIDER = "#BDBDBD"
+    TEXT_PRIMARY = "#0F172A" # Slate 900 (High contrast)
+    TEXT_SECONDARY = "#64748B" # Slate 500 (Medium contrast)
+    TEXT_ON_PRIMARY = "#FFFFFF"
+    
+    DIVIDER = "#E2E8F0"      # Slate 200
+    BORDER = "#CBD5E1"       # Slate 300
+    
+    # Status Specific
+    SCHEDULED = "#0EA5E9"    # Sky
+    COMPLETED = "#10B981"    # Emerald
+    CANCELLED = "#EF4444"    # Red
+    PENDING = "#F59E0B"      # Amber
 
 
 class AppSpacing:
@@ -47,15 +53,35 @@ class AppSpacing:
     LG = 24
     XL = 32
     XXL = 48
+    SECTION = 64
 
 
 class AppBorderRadius:
     """Border radius constants"""
-    SM = 4
-    MD = 8
-    LG = 12
-    XL = 16
+    SM = 6
+    MD = 12
+    LG = 16
+    XL = 24
     ROUND = 999
+
+
+class AppShadows:
+    """Shadow presets"""
+    sm = ft.BoxShadow(
+        blur_radius=2,
+        color=ft.colors.with_opacity(0.05, "#000000"),
+        offset=ft.Offset(0, 1),
+    )
+    md = ft.BoxShadow(
+        blur_radius=4,
+        color=ft.colors.with_opacity(0.1, "#000000"),
+        offset=ft.Offset(0, 2),
+    )
+    lg = ft.BoxShadow(
+        blur_radius=10,
+        color=ft.colors.with_opacity(0.1, "#000000"),
+        offset=ft.Offset(0, 4),
+    )
 
 
 class AppTheme:
@@ -67,42 +93,38 @@ class AppTheme:
         return ft.Theme(
             color_scheme_seed=AppColors.PRIMARY,
             use_material3=True,
+            visual_density=ft.VisualDensity.COMFORTABLE,
+            font_family="Roboto",  # Default system font usually, explicit helps
         )
     
     @staticmethod
-    def get_common_text_style(
-        size: int = 14,
-        weight: ft.FontWeight = ft.FontWeight.NORMAL,
-        color: str = AppColors.TEXT_PRIMARY
-    ) -> ft.TextStyle:
-        """Get common text style"""
+    def get_header_style() -> ft.TextStyle:
         return ft.TextStyle(
-            size=size,
-            weight=weight,
-            color=color
+            size=28,
+            weight=ft.FontWeight.BOLD,
+            color=AppColors.TEXT_PRIMARY,
+            letter_spacing=-0.5
         )
     
     @staticmethod
     def get_title_style() -> ft.TextStyle:
-        """Get title text style"""
         return ft.TextStyle(
             size=24,
             weight=ft.FontWeight.BOLD,
-            color=AppColors.TEXT_PRIMARY
+            color=AppColors.TEXT_PRIMARY,
+            letter_spacing=-0.5
         )
     
     @staticmethod
     def get_subtitle_style() -> ft.TextStyle:
-        """Get subtitle text style"""
         return ft.TextStyle(
-            size=18,
-            weight=ft.FontWeight.W_600,
-            color=AppColors.TEXT_PRIMARY
+            size=16,
+            weight=ft.FontWeight.W_500,
+            color=AppColors.TEXT_SECONDARY
         )
     
     @staticmethod
     def get_body_style() -> ft.TextStyle:
-        """Get body text style"""
         return ft.TextStyle(
             size=14,
             weight=ft.FontWeight.NORMAL,
@@ -111,7 +133,6 @@ class AppTheme:
     
     @staticmethod
     def get_caption_style() -> ft.TextStyle:
-        """Get caption text style"""
         return ft.TextStyle(
             size=12,
             weight=ft.FontWeight.NORMAL,
